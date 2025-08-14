@@ -10,7 +10,6 @@ export function Skills() {
         { name: "TypeScript", level: 85 },
         { name: "HTML/CSS", level: 95 },
         { name: "Tailwind CSS", level: 90 },
-        { name: "Vue.js", level: 75 }
       ]
     },
     {
@@ -20,7 +19,6 @@ export function Skills() {
         { name: "Python", level: 80 },
         { name: "Express.js", level: 85 },
         { name: "REST APIs", level: 90 },
-        { name: "GraphQL", level: 70 }
       ]
     },
     {
@@ -30,7 +28,6 @@ export function Skills() {
         { name: "PostgreSQL", level: 80 },
         { name: "MySQL", level: 75 },
         { name: "Redis", level: 70 },
-        { name: "Supabase", level: 85 }
       ]
     },
     {
@@ -107,15 +104,15 @@ export function Skills() {
           className="mt-16 grid md:grid-cols-3 gap-8"
         >
           <div className="text-center p-6 rounded-lg bg-gradient-card border border-border">
-            <div className="text-3xl font-bold text-primary mb-2">50+</div>
+            <div className="text-3xl font-bold text-primary mb-2">3+</div>
             <div className="text-muted-foreground">Projects Completed</div>
           </div>
           <div className="text-center p-6 rounded-lg bg-gradient-card border border-border">
-            <div className="text-3xl font-bold text-accent mb-2">2+</div>
+            <div className="text-3xl font-bold text-accent mb-2">1+</div>
             <div className="text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center p-6 rounded-lg bg-gradient-card border border-border">
-            <div className="text-3xl font-bold text-primary mb-2">15+</div>
+            <div className="text-3xl font-bold text-primary mb-2">10+</div>
             <div className="text-muted-foreground">Technologies Mastered</div>
           </div>
         </motion.div>

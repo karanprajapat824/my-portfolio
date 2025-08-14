@@ -1,21 +1,22 @@
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Calendar, MapPin, Award } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 
 export function Education() {
   const education = [
     {
       degree: "Bachelor of Technology in Computer Science",
-      institution: "Rajasthan Technical University",
-      location: "Kota, Rajasthan",
-      duration: "2020 - 2024",
-      grade: "8.5 CGPA",
-      description: "Comprehensive study of computer science fundamentals including data structures, algorithms, software engineering, and web development.",
+      institution: "Mahakal Institute of Technology and Management",
+      location: "Ujjain , M.P",
+      duration: "2021 - 2025",
+      grade: "7.00 CGPA",
+      description:
+        "Comprehensive study of computer science fundamentals including data structures, algorithms, software engineering, and web development.",
       achievements: [
         "Dean's List for academic excellence",
         "Led the web development team in college tech fest",
-        "Completed capstone project on e-commerce platform"
+        "Completed capstone project on e-commerce platform",
       ],
       coursework: [
         "Data Structures & Algorithms",
@@ -23,40 +24,52 @@ export function Education() {
         "Database Management",
         "Software Engineering",
         "Computer Networks",
-        "Operating Systems"
-      ]
-    }
-  ]
+        "Operating Systems",
+      ],
+    },
+    {
+      degree: "Higher Secondary Education (Class 12)",
+      institution: "Jai Bharti Higher Secondary School",
+      location: "Ujjain, M.P",
+      duration: "2020 - 2021",
+      grade: "80%",
+      description:
+        "Studied core science subjects with a focus on Physics, Chemistry, Mathematics, and complementary courses.",
+      achievements: [
+        "Achieved 80% overall in board examinations",
+        "Actively participated in school science exhibitions",
+        "Represented school in inter-school quiz competition",
+      ],
+      coursework: ["Physics", "Chemistry", "Mathematics", "English", "Hindi"],
+    },
+    {
+      degree: "Secondary Education (Class 10)",
+      institution: "Jai Bharti Higher Secondary School",
+      location: "Ujjain, M.P",
+      duration: "2018 - 2019",
+      grade: "80%",
+      description:
+        "Completed foundational studies across core subjects including languages, science, and mathematics.",
+      achievements: [
+        "Achieved 80% in board examinations",
+        "Won first prize in inter-school science quiz",
+        "Participated in district-level mathematics competition",
+      ],
+      coursework: ["English", "Hindi", "Sanskrit", "Science", "Mathematics"],
+    },
+  ];
 
   const certifications = [
     {
       title: "Full Stack Web Development",
-      issuer: "FreeCodeCamp",
-      date: "2023",
-      icon: "🏆"
+      issuer: "IndusAi Solution",
+      date: "Oct 2024",
+      icon: "🏆",
     },
-    {
-      title: "React Developer Certification",
-      issuer: "Meta",
-      date: "2023",
-      icon: "⚛️"
-    },
-    {
-      title: "AWS Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      icon: "☁️"
-    },
-    {
-      title: "JavaScript Algorithms",
-      issuer: "HackerRank",
-      date: "2022",
-      icon: "📜"
-    }
-  ]
+  ];
 
   return (
-    <section id="education" className="py-24 bg-muted/30">
+    <section id="education" className="py-24 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -69,13 +82,14 @@ export function Education() {
             Education & <span className="gradient-text">Certifications</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My academic background and professional certifications that have built the foundation for my development career.
+            My academic background and professional certifications that have
+            built the foundation for my development career.
           </p>
         </motion.div>
 
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8">
           {/* Education Details */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 gap-8 flex flex-col">
             {education.map((edu, index) => (
               <motion.div
                 key={edu.degree}
@@ -91,7 +105,9 @@ export function Education() {
                         <GraduationCap className="h-8 w-8 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-2xl mb-2">{edu.degree}</CardTitle>
+                        <CardTitle className="text-2xl mb-2">
+                          {edu.degree}
+                        </CardTitle>
                         <div className="space-y-2">
                           <div className="text-xl font-semibold text-primary">
                             {edu.institution}
@@ -129,26 +145,30 @@ export function Education() {
                             key={achIndex}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ 
-                              duration: 0.4, 
-                              delay: index * 0.1 + achIndex * 0.05 
+                            transition={{
+                              duration: 0.4,
+                              delay: index * 0.1 + achIndex * 0.05,
                             }}
                             viewport={{ once: true }}
                             className="flex items-start space-x-3"
                           >
                             <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-muted-foreground">{achievement}</span>
+                            <span className="text-muted-foreground">
+                              {achievement}
+                            </span>
                           </motion.li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-3">Relevant Coursework:</h4>
+                      <h4 className="font-semibold mb-3">
+                        Relevant Coursework:
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {edu.coursework.map((course) => (
-                          <Badge 
-                            key={course} 
+                          <Badge
+                            key={course}
                             variant="outline"
                             className="bg-background"
                           >
@@ -212,7 +232,9 @@ export function Education() {
               <Card className="card-hover bg-gradient-card border-border p-6 text-center">
                 <h4 className="font-semibold mb-3">Continuous Learning</h4>
                 <p className="text-sm text-muted-foreground">
-                  Always staying updated with the latest technologies and best practices through online courses, workshops, and community contributions.
+                  Always staying updated with the latest technologies and best
+                  practices through online courses, workshops, and community
+                  contributions.
                 </p>
               </Card>
             </motion.div>
@@ -220,5 +242,5 @@ export function Education() {
         </div>
       </div>
     </section>
-  )
+  );
 }

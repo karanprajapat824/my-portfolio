@@ -1,82 +1,83 @@
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react"
-import { useState } from "react"
-import { useToast } from "@/hooks/use-toast"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  const { toast } = useToast()
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Here you would typically send the form data to your backend
     toast({
       title: "Message sent!",
       description: "Thank you for your message. I'll get back to you soon!",
-    })
-    setFormData({ name: '', email: '', subject: '', message: '' })
-  }
+    });
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      value: "karan.prajapat@example.com",
-      href: "mailto:karan.prajapat@example.com"
+      value: "karanprajapat824@gmail.com",
+      href: "mailto:karanprajapat824@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210"
+      value: "+91 8770738268",
+      href: "tel:+918770738268",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Jaipur, Rajasthan, India",
-      href: "#"
-    }
-  ]
+      value: "Ujjain Madhya Pradesh, India",
+      href: "#",
+    },
+  ];
 
   const socialLinks = [
     {
       icon: Github,
       name: "GitHub",
-      href: "https://github.com/karanprajapat",
-      color: "hover:text-gray-900 dark:hover:text-gray-100"
+      href: "https://github.com/karanprajapat824",
+      color: "hover:text-gray-900 dark:hover:text-gray-100",
     },
     {
       icon: Linkedin,
-      name: "LinkedIn", 
-      href: "https://linkedin.com/in/karanprajapat",
-      color: "hover:text-blue-600"
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/karanprajapat824",
+      color: "hover:text-blue-600",
     },
     {
-      icon: Twitter,
-      name: "Twitter",
-      href: "https://twitter.com/karanprajapat",
-      color: "hover:text-blue-400"
-    }
-  ]
+      icon: Mail,
+      href: "mailto:karanprajapat824@gmail.com",
+      label: "Email",
+    },
+  ];
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-24 overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -89,7 +90,7 @@ export function Contact() {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. 
+            I'm always interested in new opportunities and exciting projects.
             Let's discuss how we can work together!
           </p>
         </motion.div>
@@ -168,8 +169,8 @@ export function Contact() {
                 <CardContent className="pt-6">
                   <h4 className="font-semibold mb-2">Available for work</h4>
                   <p className="text-sm text-muted-foreground">
-                    Currently open to full-time opportunities and freelance projects. 
-                    Let's create something amazing together!
+                    Currently open to full-time opportunities and freelance
+                    projects. Let's create something amazing together!
                   </p>
                 </CardContent>
               </Card>
@@ -197,7 +198,10 @@ export function Contact() {
                       transition={{ duration: 0.4, delay: 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Full Name
                       </label>
                       <Input
@@ -217,7 +221,10 @@ export function Contact() {
                       transition={{ duration: 0.4, delay: 0.2 }}
                       viewport={{ once: true }}
                     >
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Email Address
                       </label>
                       <Input
@@ -232,14 +239,17 @@ export function Contact() {
                       />
                     </motion.div>
                   </div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.3 }}
                     viewport={{ once: true }}
                   >
-                    <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Subject
                     </label>
                     <Input
@@ -253,14 +263,17 @@ export function Contact() {
                       className="bg-background border-border focus:border-primary"
                     />
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Message
                     </label>
                     <Textarea
@@ -274,16 +287,16 @@ export function Contact() {
                       className="bg-background border-border focus:border-primary resize-none"
                     />
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       className="btn-hero w-full md:w-auto px-8"
                     >
                       Send Message
@@ -297,5 +310,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

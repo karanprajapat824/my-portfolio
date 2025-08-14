@@ -26,8 +26,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-10 relative z-10">
-        <div className="grid lg:grid-cols-2 px-8 items-center">
-          {/* Left side - Content */}
+        <div className="grid lg:grid-cols-1 px-8 items-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -41,8 +40,7 @@ export function Hero() {
               className="space-y-4 mb-8"
             >
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-                <span className="gradient-text">Karan</span>
-                <br />
+                <span className="gradient-text pr-4">Karan</span>
                 <span className="text-foreground">Prajapat</span>
               </h1>
               <p className="text-2xl md:text-3xl font-medium text-muted-foreground">
@@ -72,6 +70,7 @@ export function Hero() {
                 View Projects
                 <ArrowDown className="ml-2 h-5 w-5" />
               </Button>
+              <a href="./resume.pdf" download>
               <Button 
                 variant="outline" 
                 size="lg"
@@ -80,35 +79,8 @@ export function Hero() {
                 Download Resume
                 <Download className="ml-2 h-5 w-5" />
               </Button>
+              </a>
             </motion.div>
-          </motion.div>
-
-          {/* Right side - Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center lg:justify-end"
-          >
-            <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-border/50 flex items-center justify-center">
-                {/* Placeholder for developer image */}
-                <div className="w-72 h-72 overflow-hidden lg:w-88 lg:h-88 rounded-full bg-gradient-to-br from-muted/50 to-muted/80 flex items-center justify-center">
-                  <img src="favicon.ico" />
-                </div>
-              </div>
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-primary/20 rounded-full blur-sm"
-              />
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-accent/20 rounded-full blur-sm"
-              />
-            </div>
           </motion.div>
         </div>
       </div>

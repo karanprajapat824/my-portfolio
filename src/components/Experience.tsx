@@ -1,41 +1,54 @@
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CalendarDays, MapPin } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button"
+import { CalendarDays, MapPin } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react"
 
 export function Experience() {
   const experiences = [
     {
       title: "Full Stack Developer Intern",
-      company: "TechCorp Solutions",
+      company: "IndusAi Solutions",
       location: "Remote",
-      duration: "Jun 2023 - Dec 2023",
-      description: "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with senior developers to implement new features and optimize existing codebase.",
+      duration: "July 2024 - Oct 2024",
+      description:
+        "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with senior developers to implement new features and optimize existing codebase.",
       responsibilities: [
         "Built responsive user interfaces with React and TypeScript",
         "Developed RESTful APIs using Node.js and Express",
         "Worked with MongoDB for database design and optimization",
         "Participated in code reviews and followed agile development practices",
-        "Reduced application load time by 40% through optimization techniques"
+        "Reduced application load time by 40% through optimization techniques",
       ],
-      technologies: ["React", "Node.js", "MongoDB", "TypeScript", "Git"]
+      technologies: ["React", "Node.js", "MongoDB", "TypeScript", "Git"],
+      certificate : "./indusAi Solution.png"
     },
     {
-      title: "Frontend Developer Intern",
-      company: "StartupHub",
-      location: "Jaipur, India",
-      duration: "Jan 2023 - May 2023",
-      description: "Focused on frontend development and user experience design. Created responsive layouts and interactive components for various client projects.",
+      title: "Full Stack Developer Intern",
+      company: "Elavate Labs",
+      location: "Remote",
+      duration: "Aug 2025 - Current",
+      description:
+        "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with senior developers to implement new features and optimize existing codebase.",
       responsibilities: [
         "Designed and implemented responsive web interfaces",
         "Collaborated with UX/UI designers to create pixel-perfect layouts",
         "Integrated frontend applications with backend APIs",
         "Optimized web applications for cross-browser compatibility",
-        "Mentored junior interns and conducted code reviews"
+        "Mentored junior interns and conducted code reviews",
       ],
-      technologies: ["HTML/CSS", "JavaScript", "Vue.js", "Sass", "Figma"]
-    }
-  ]
+      technologies: [
+        "HTML/CSS",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Git",
+      ],
+      certificate : ''
+    },
+  ];
 
   return (
     <section id="experience" className="py-24">
@@ -51,7 +64,8 @@ export function Experience() {
             Work <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My professional journey and internship experiences that have shaped my development skills.
+            My professional journey and internship experiences that have shaped
+            my development skills.
           </p>
         </motion.div>
 
@@ -77,7 +91,9 @@ export function Experience() {
                     <CardHeader>
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div>
-                          <CardTitle className="text-2xl mb-2">{experience.title}</CardTitle>
+                          <CardTitle className="text-2xl mb-2">
+                            {experience.title}
+                          </CardTitle>
                           <div className="text-xl font-semibold text-primary mb-2">
                             {experience.company}
                           </div>
@@ -100,33 +116,41 @@ export function Experience() {
                       </p>
 
                       <div>
-                        <h4 className="font-semibold mb-3">Key Responsibilities:</h4>
+                        <h4 className="font-semibold mb-3">
+                          Key Responsibilities:
+                        </h4>
                         <ul className="space-y-2">
-                          {experience.responsibilities.map((responsibility, respIndex) => (
-                            <motion.li
-                              key={respIndex}
-                              initial={{ opacity: 0, x: -20 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              transition={{ 
-                                duration: 0.4, 
-                                delay: index * 0.1 + respIndex * 0.05 
-                              }}
-                              viewport={{ once: true }}
-                              className="flex items-start space-x-3"
-                            >
-                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-muted-foreground">{responsibility}</span>
-                            </motion.li>
-                          ))}
+                          {experience.responsibilities.map(
+                            (responsibility, respIndex) => (
+                              <motion.li
+                                key={respIndex}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: index * 0.1 + respIndex * 0.05,
+                                }}
+                                viewport={{ once: true }}
+                                className="flex items-start space-x-3"
+                              >
+                                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-muted-foreground">
+                                  {responsibility}
+                                </span>
+                              </motion.li>
+                            )
+                          )}
                         </ul>
                       </div>
 
                       <div>
-                        <h4 className="font-semibold mb-3">Technologies Used:</h4>
+                        <h4 className="font-semibold mb-3">
+                          Technologies Used:
+                        </h4>
                         <div className="flex flex-wrap gap-2">
                           {experience.technologies.map((tech) => (
-                            <Badge 
-                              key={tech} 
+                            <Badge
+                              key={tech}
                               variant="secondary"
                               className="bg-primary/10 text-primary hover:bg-primary/20"
                             >
@@ -135,6 +159,20 @@ export function Experience() {
                           ))}
                         </div>
                       </div>
+                      {
+                        experience.certificate && <a
+                        href={experience.certificate}
+                        download
+                        ><Button
+                        variant="outline"
+                        size="lg"
+                        className="btn-outline-glow px-8 py-3 mt-4 text-lg font-semibold rounded-full min-w-[200px]"
+                      >
+                        Download Certificat
+                        <Download className="ml-2 h-5 w-5" />
+                      </Button></a>
+                      }
+                      
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -172,5 +210,5 @@ export function Experience() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
