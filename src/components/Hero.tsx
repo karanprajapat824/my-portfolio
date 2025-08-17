@@ -25,8 +25,8 @@ export function Hero() {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      <div className="container mx-auto px-10 relative z-10">
-        <div className="grid lg:grid-cols-1 px-8 items-center">
+      <div className="container mx-auto relative z-10">
+        <div className="grid lg:grid-cols-1 items-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
