@@ -23,10 +23,19 @@ export function Projects() {
       featured: true,
     },
     {
+      title: "Smart Resume",
+      description: "A full-stack tool built with Next.js and Node.js that lets users create clean, professional resumes in minutes. It features dynamic form sections, real-time preview, customizable templates, and PDF export. Built with a modular architecture, secure APIs, and optimized rendering for fast performance.",
+      image: "Smart-Resume.png",
+      technologies: ["NextJs", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+      liveUrl: "https://smartresume01.vercel.app",
+      githubUrl: "http://github.com/karanprajapat824/smart_resume",
+      featured: true,
+    },
+    {
       title: "To-Do App",
       description:
         "A simple yet powerful task management web app that allows users to create, edit, delete, and mark tasks as complete. Features filtering by status, persistent storage using local storage, and a clean responsive UI for seamless usage across devices.",
-      image: "/todo.png",
+      image: "todo.png",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
       liveUrl: "https://karan-todo-app.vercel.app",
       githubUrl: "https://github.com/karanprajapat824/todo-app",

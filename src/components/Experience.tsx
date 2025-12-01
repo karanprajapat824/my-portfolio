@@ -28,7 +28,7 @@ export function Experience() {
       title: "Full Stack Developer Intern",
       company: "Elavate Labs",
       location: "Remote",
-      duration: "Aug 2025 - Current",
+      duration: "Aug 2025 - Sep 2025",
       description:
         "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with senior developers to implement new features and optimize existing codebase.",
       responsibilities: [
@@ -46,7 +46,7 @@ export function Experience() {
         "MongoDB",
         "Git",
       ],
-      certificate : ''
+      certificate : './inter2.jpg'
     },
   ];
 
